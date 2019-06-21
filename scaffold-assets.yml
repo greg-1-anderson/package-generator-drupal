@@ -1,39 +1,11 @@
 packages:
-  webflo/drupal-core-strict:
-    source: https://git.drupalcode.org/project/drupal.git
-    target: https://github.com/webflo/drupal-core-strict.git
-    git:
-      author:
-        name: Florian Weber (via CircleCI)
-        email: florian@webflo.org
-    builder: \PackageGeneratorDrupal\DrupalCoreStrictBuilder
-    composer:
-      metadata:
-        name: webflo/drupal-core-strict
-        type: metapackage
-        description: Locked core dependencies
-        license: GPL-2.0-or-later
-  webflo/drupal-core-require-dev:
-    source: https://git.drupalcode.org/project/drupal.git
-    target: https://github.com/webflo/drupal-core-require-dev.git
-    git:
-      author:
-        name: Florian Weber (via CircleCI)
-        email: florian@webflo.org
-    builder: \PackageGeneratorDrupal\DrupalCoreRequireDevBuilder
-    composer:
-      metadata:
-        name: webflo/drupal-core-require-dev
-        type: metapackage
-        description: require-dev dependencies from drupal/core
-        license: GPL-2.0-or-later
   greg-1-anderson/drupal-scaffold-assets:
     source: https://git.drupalcode.org/project/drupal.git
     target: https://github.com/greg-1-anderson/drupal-scaffold-assets.git
     git:
       author:
-        name: Florian Weber (via CircleCI)
-        email: florian@webflo.org
+        name: Greg Anderson
+        email: greg.1.anderson@greeknowe.org
     builder: \PackageGeneratorDrupal\DrupalScaffoldAssetsBuilder
     composer:
       metadata:
