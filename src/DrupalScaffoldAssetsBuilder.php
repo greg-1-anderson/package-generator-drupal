@@ -9,6 +9,21 @@ class DrupalScaffoldAssetsBuilder extends DrupalPackageBuilder {
   public function getPackage() {
     $composer = $this->config['composer']['metadata'];
 
+    // Fetch the existing composer.json for the drupal/core project.
+    $path = $this->gitObject->getRepository()
+        ->getPath() . '/core/composer.json';
+    if (file_exists($path)) {
+      $composerJsonData = json_decode(file_get_contents($path), TRUE);
+
+      // If drupal/core already has 'composer-scaffold' entries, then
+      // exit early without adding our own file mappings. Allow 'drupal/core'
+      // to scaffold in case the project-level composer.json does not.
+      if (isset($composerJsonData['extra']['composer-scaffold'])) {
+        $composer['extra']['composer-scaffold']['allowed-packages'] = ['drupal/core'];
+        return $composer;
+      }
+    }
+
     $composer['extra']['composer-scaffold']['file-mapping'] = $this->addFileMapping();
 
     return $composer;

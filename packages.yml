@@ -1,7 +1,7 @@
 packages:
-  webflo/drupal-core-strict:
+  greg-1-anderson/core-recommended-dependencies:
     source: https://git.drupalcode.org/project/drupal.git
-    target: https://github.com/webflo/drupal-core-strict.git
+    target: https://github.com/greg-1-anderson/core-recommended-dependencies.git
     git:
       author:
         name: Florian Weber (via CircleCI)
@@ -9,13 +9,13 @@ packages:
     builder: \PackageGeneratorDrupal\DrupalCoreStrictBuilder
     composer:
       metadata:
-        name: webflo/drupal-core-strict
+        name: greg-1-anderson/core-recommended-dependencies
         type: metapackage
-        description: Locked core dependencies
+        description: Locked core dependencies; require this project INSTEAD OF drupal/core.
         license: GPL-2.0-or-later
-  webflo/drupal-core-require-dev:
+  greg-1-anderson/core-dev-dependencies:
     source: https://git.drupalcode.org/project/drupal.git
-    target: https://github.com/webflo/drupal-core-require-dev.git
+    target: https://github.com/greg-1-anderson/core-dev-dependencies.git
     git:
       author:
         name: Florian Weber (via CircleCI)
@@ -23,9 +23,9 @@ packages:
     builder: \PackageGeneratorDrupal\DrupalCoreRequireDevBuilder
     composer:
       metadata:
-        name: webflo/drupal-core-require-dev
+        name: greg-1-anderson/core-dev-dependencies
         type: metapackage
-        description: require-dev dependencies from drupal/core
+        description: require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended-dependencies to run tests from drupal/core.
         license: GPL-2.0-or-later
   greg-1-anderson/drupal-scaffold-assets:
     source: https://git.drupalcode.org/project/drupal.git
@@ -58,10 +58,6 @@ packages:
         "[web-root]/sites/default/default.settings.php": "assets/default.settings.php"
         "[web-root]/sites/example.settings.local.php": "assets/example.settings.local.php"
         "[web-root]/sites/development.services.yml": "assets/development.services.yml"
-        "[web-root]/sites/default/settings.php":
-            shadow: "[web-root]/sites/default/default.settings.php"
-            path: "assets/default.settings.php"
-            overwrite: false
         "[web-root]/sites/example.sites.php": "assets/example.sites.php"
         "[web-root]/modules/README.txt": "assets/modules.README.txt"
         "[web-root]/profiles/README.txt": "assets/profiles.README.txt"
