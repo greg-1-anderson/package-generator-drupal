@@ -27,6 +27,20 @@ packages:
         type: metapackage
         description: require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended-dependencies to run tests from drupal/core.
         license: GPL-2.0-or-later
+  greg-1-anderson/core-recommended-dev-dependencies:
+    source: https://git.drupalcode.org/project/drupal.git
+    target: https://github.com/greg-1-anderson/core-recommended-dev-dependencies.git
+    git:
+      author:
+        name: Florian Weber (via CircleCI)
+        email: florian@webflo.org
+    builder: \PackageGeneratorDrupal\DrupalCoreStrictRequireDevBuilder
+    composer:
+      metadata:
+        name: greg-1-anderson/core-recommended-dev-dependencies
+        type: metapackage
+        description: Pinned require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended-dependencies to run tests from drupal/core.
+        license: GPL-2.0-or-later
   greg-1-anderson/drupal-scaffold-assets:
     source: https://git.drupalcode.org/project/drupal.git
     target: https://github.com/greg-1-anderson/drupal-scaffold-assets.git

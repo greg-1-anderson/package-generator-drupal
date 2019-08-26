@@ -10,6 +10,10 @@ class DrupalCoreRequireDevBuilder extends DrupalPackageBuilder {
   public function getPackage() {
     $composer =  $this->config['composer']['metadata'] + ['require' => []];
 
+    // Use only one of drupal/core-recommended-dev-dependencies or
+    // drupal/core-dev-dependencies.
+    $composer['conflict']['drupal/core-recommended-dev-dependencies'] = '*';
+
     // The relevant require-dev constraints are stored in core/composer.json until Drupal 8.8.x,
     // where they moved to the root composer.json.
     foreach (['/core/composer.json', '/composer.json'] as $composerJsonPath) {
